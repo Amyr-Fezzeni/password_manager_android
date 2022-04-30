@@ -64,14 +64,14 @@ public class CustomAdapter extends ArrayAdapter {
 //        else{
 //            image.setImageResource(R.drawable.sad);
 //        }
-        result.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(context, getMessage(position, _note), Toast.LENGTH_LONG).show();
-            }
-        });
+//        result.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(context, getMessage(position, _note), Toast.LENGTH_LONG).show();
+//            }
+//        });
         return result;
-    }
+//    }
 
     }
 }
