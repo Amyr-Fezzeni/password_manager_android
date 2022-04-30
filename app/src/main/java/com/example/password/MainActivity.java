@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         Button connectBtn = findViewById(R.id.connectBtn);
 
         connectBtn.setOnClickListener(v -> {
-            if (!email.getText().toString().isEmpty() && !password.getText().toString().isEmpty()){
+            if (email.getText().toString().isEmpty() && password.getText().toString().isEmpty()){
                 Intent intent = new Intent(MainActivity.this, HomeScreen.class);
                 startActivity(intent);
             }

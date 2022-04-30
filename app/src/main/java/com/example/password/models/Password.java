@@ -1,6 +1,9 @@
 package com.example.password.models;
 
+import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
+
+import com.example.password.R;
 
 public class Password {
     private String id;
@@ -47,9 +50,47 @@ public class Password {
         this.password = password;
     }
 
+
     @NonNull
     public String toString(){
         return String.format("(Id:%s, Title:%s, Username:%s, Password:%s)", id, title, username, password);
+    }
+
+    public @DrawableRes
+    int  getIconId(){
+        if (title.toLowerCase().contains("google")){
+        return R.drawable.google;
+        }
+        if (title.toLowerCase().contains("facebook")){
+            return R.drawable.facebook;
+        }
+        if (title.toLowerCase().contains("youtube")){
+            return R.drawable.youtube;
+        }
+        if (title.toLowerCase().contains("linkedin")){
+            return R.drawable.linkedin;
+        }
+        if (title.toLowerCase().contains("github")){
+            return R.drawable.github;
+        }
+        if (title.toLowerCase().contains("skype")){
+            return R.drawable.skype;
+        }
+        if (title.toLowerCase().contains("snapshat")){
+            return R.drawable.snapchat;
+        }
+        if (title.toLowerCase().contains("twitter")){
+            return R.drawable.twitter;
+        }
+        if (title.toLowerCase().contains("gitlab")){
+            return R.drawable.gitlab;
+        }
+        if (title.toLowerCase().contains("instagram")){
+            return R.drawable.instagram;
+        }
+        else{
+            return R.drawable.autre;
+        }
     }
 
 }

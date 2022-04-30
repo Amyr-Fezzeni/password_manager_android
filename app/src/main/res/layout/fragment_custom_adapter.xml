@@ -2,67 +2,88 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="120dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginHorizontal="10dp"
-    android:layout_marginTop="10dp"
-    android:background="@drawable/background"
-    android:radius="15dp"
-    android:elevation="5dp"
-    tools:context=".custom_adapter">
+    android:background="@android:color/transparent"
+    tools:context=".CustomAdapter"
+    >
 
 
-    <TextView
-        android:id="@+id/title"
+    <FrameLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="50dp"
+        android:layout_marginHorizontal="10dp"
         android:layout_marginTop="10dp"
-        android:text="Google"
-        android:textSize="24sp"
-        android:textStyle="italic" />
-    <TextView
-        android:id="@+id/username"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="45dp"
-        android:text="anotique@gmail.com"
-        android:textSize="18sp"
-        android:textStyle="italic" />
-    <TextView
-        android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="70dp"
-        android:text="****************"
-        android:textSize="18sp"
-        android:textStyle="italic" />
-
-    <ImageView
-        android:id="@+id/imgIcon"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="10dp"
-        tools:src="@drawable/google" />
-
-    <ImageButton
-        android:id="@+id/visibilityBtn"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_gravity="top|end"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/visibility_icon" />
-    <ImageButton
-        android:id="@+id/copyBtn"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:src="@drawable/ic_copy" />
+        android:background="@drawable/background"
+        android:outlineProvider="background"
+
+        android:elevation="4dp"
+        android:radius="30dp"
+        android:shape="rectangle">
+
+        <ImageView
+            android:id="@+id/imgIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+
+            tools:src="" />
+
+        <TextView
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="65dp"
+            android:text=""
+            android:textColor="#535353"
+            android:textSize="18sp"
+            />
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="45dp"
+            android:text=""
+            android:textColor="#535353"
+            android:textSize="18sp" />
+
+        <ImageButton
+            android:id="@+id/visibilityBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="10dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/visibility_icon" />
+
+        <ImageButton
+            android:id="@+id/copyBtn"
+
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="8dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_copy" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"
+            android:textColor="#535353"
+            android:text=""
+            android:textSize="24sp"
+            />
+    </FrameLayout>
 
 </FrameLayout>

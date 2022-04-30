@@ -7,9 +7,10 @@
     tools:context=".HomeScreen">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/Theme.Password.AppBarOverlay">
+        android:theme="@style/Theme.Password">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -17,16 +18,58 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/Theme.Password.PopupOverlay"
-            app:title="Password Manager"
-            app:titleTextColor="#E1E1E1" />
+            app:title=" "
+
+           >
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="5dp"
+                android:fontFamily="sans-serif-light"
+                android:shadowColor="@color/white"
+                android:text="Password Manager"
+                android:textColor="@color/white"
+                android:textSize="28sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="-50dp" />
+
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@android:color/transparent"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/ic_menu" />
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+
 
     </com.google.android.material.appbar.AppBarLayout>
 
 <!--    <include layout="@layout/content_home_screen" />-->
 
     <ListView
+        android:id="@+id/listPasswords"
         android:layout_width="match_parent"
         android:layout_marginTop="56dp"
+        android:textAlignment="center"
+        android:divider="@null"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="10dp"
+        android:background="#EFEFEF"
         android:layout_height="match_parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
