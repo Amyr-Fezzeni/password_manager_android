@@ -5,6 +5,9 @@ import androidx.annotation.NonNull;
 
 import com.example.password.R;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Password {
     private String id;
     private String title;
@@ -93,4 +96,19 @@ public class Password {
         }
     }
 
+    public Password(Map<String, Object>data){
+        this.id = (String) data.get("id");
+        this.title = (String) data.get("title");
+        this.username = (String) data.get("username");
+        this.password = (String) data.get("password");
+    }
+
+    public HashMap<String, Object> toJson(){
+        HashMap<String, Object> data = new HashMap<>();
+        data.put("id", id);
+        data.put("title",title );
+        data.put("username",username );
+        data.put("password",password );
+        return data;
+    }
 }

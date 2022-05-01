@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "383265313140",
+    "project_id": "passwordmanagerandroid-5c94e",
+    "storage_bucket": "passwordmanagerandroid-5c94e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:383265313140:android:7e6a7f548f5064cfd15c21",
+        "android_client_info": {
+          "package_name": "tech.amyrfezzeni.password"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "383265313140-g8scvphkpfls63a2ievbkirq8ogf668p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0lXMq8OAzCAUGPLh2LmD9yytjUMdS6fc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "383265313140-g8scvphkpfls63a2ievbkirq8ogf668p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
