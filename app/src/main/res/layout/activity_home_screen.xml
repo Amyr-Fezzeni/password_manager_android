@@ -19,7 +19,6 @@
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/Theme.Password.PopupOverlay"
             app:title=" "
-
            >
 
         <ImageView
@@ -83,6 +82,6 @@
         android:tint="@color/white"
         android:foregroundTint="@color/white"
         app:srcCompat="@drawable/ic_add"
-        android:contentDescription="TODO" />
+        />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
