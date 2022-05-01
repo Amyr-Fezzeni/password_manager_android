@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         connectBtn.setOnClickListener(v -> {
             if (!email.getText().toString().isEmpty() && !password.getText().toString().isEmpty()){
-                Intent intent = new Intent(MainActivity.this, HomeScreen.class);
+                Intent intent = new Intent(MainActivity.this, Menu.class);
                 startActivity(intent);
             }
         });

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".Menu"
+    tools:ignore="ExtraText">
+
+    //mail
+
+    //passeword
+
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="437dp"
+        android:layout_height="1138dp"
+        android:layout_marginBottom="270dp"
+        android:background="#2E2E30"
+        android:contentDescription="@string/todo"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/background"
+        tools:ignore="ContentDescription,MissingConstraints"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="366dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="400dp"
+        android:paddingStart="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView19"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.57"
+        app:layout_constraintStart_toStartOf="@+id/imageView19"
+        tools:ignore="MissingConstraints,RtlSymmetry">
+
+        <TextView
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="   Amyr Fezzeni"
+            android:textColor="@color/black"
+            app:drawableStartCompat="@drawable/ic_baseline_person_24"
+            tools:ignore="HardcodedText,RtlHardcoded" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="366dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="360dp"
+        android:orientation="horizontal"
+        android:paddingStart="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView19"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.67"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:drawableStart="@drawable/ic_email_focus"
+            android:paddingLeft="20dp"
+            android:text="  amyrfezzeni@gmail.com"
+            android:textColor="#010102"
+            tools:layout_editor_absoluteX="42dp"
+            tools:layout_editor_absoluteY="361dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="366dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="320dp"
+        android:orientation="horizontal"
+        android:paddingStart="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView19"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.76"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="285dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:drawableStart="@drawable/ic_baseline_nights_stay_24"
+            android:paddingLeft="20dp"
+            android:text="  dark mode "
+            android:textColor="#010102" />
+    </LinearLayout>
+
+    <Switch
+        android:id="@+id/darkmodeswitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="150dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="120dp"
+        android:text="logout"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView19"
+        app:layout_constraintEnd_toEndOf="@+id/imageView19"
+        app:layout_constraintStart_toStartOf="@+id/imageView19"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="200dp"
+        android:text="Change Password"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView19"
+        app:layout_constraintEnd_toEndOf="@+id/imageView19"
+        app:layout_constraintStart_toStartOf="@+id/imageView19"
+        tools:visibility="visible" />
+
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="188dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="460dp"
+        android:text="Change Profile "
+        app:layout_constraintBottom_toBottomOf="@+id/imageView19"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toStartOf="@+id/imageView19" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
