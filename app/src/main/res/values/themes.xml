@@ -1,10 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Password" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.Light" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@android:color/holo_blue_dark</item>
         <item name="colorPrimaryVariant">@android:color/holo_blue_dark</item>
         <item name="colorOnPrimary">@color/white</item>
+        <item name="android:windowFullscreen">true</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
@@ -12,17 +13,70 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">@android:color/white</item>
         <!-- Customize your theme here. -->
+        <item name="background_color">#FEFEFE</item>
+        <item name="text_color">#555555</item>
+        <item name="hint_color">#515151</item>
+        <item name="icon_color">#515151</item>
+        <item name="appBar_color">#C9E6FD</item>
+        <item name="bgCard">@drawable/background</item>
+    </style>
+    <!-- Base application theme. -->
+    <style name="Theme.Dark" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@android:color/holo_blue_dark</item>
+        <item name="colorPrimaryVariant">@android:color/holo_blue_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:windowFullscreen">true</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="background_color">#232323</item>
+        <item name="text_color">#DFDFDF</item>
+        <item name="hint_color">#D1D1D1</item>
+        <item name="icon_color">#D1D1D1</item>
+        <item name="appBar_color">#0D293E</item>
+        <item name="bgCard">@drawable/background_night</item>
     </style>
 
-    <style name="Theme.Password.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+
+    <style name="circleImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+
     </style>
+
     <style name="DialogAnimation">
         <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>
         <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
     </style>
-    <style name="Theme.Password.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="Theme.Password.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/background_color"
     tools:context=".SignUp">
 
     <ImageView
@@ -25,7 +26,7 @@
         android:fontFamily="sans-serif-light"
         android:shadowColor="@color/white"
         android:text="Create Account"
-        android:textColor="#DD424242"
+        android:textColor="?attr/text_color"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,11 +39,13 @@
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/custom_input"
-        android:drawableStart="@drawable/ic_person"
+        android:drawableStart="@drawable/person"
         android:drawablePadding="12dp"
         android:elevation="2dp"
         android:ems="10"
         android:hint="Name"
+        android:textColorHint="?attr/text_color"
+        android:textColor="?attr/text_color"
         android:inputType="text"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
@@ -56,6 +59,9 @@
         android:layout_width="280dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
+        android:textColorHint="?attr/text_color"
+        android:textColor="?attr/text_color"
+        android:shadowColor="?attr/text_color"
         android:background="@drawable/custom_input"
         android:drawableStart="@drawable/email_icon"
         android:drawablePadding="12dp"
@@ -65,7 +71,7 @@
         android:inputType="textEmailAddress"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
-        android:shadowColor="@color/black"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/namesignup" />
@@ -84,7 +90,9 @@
         android:inputType="textPassword"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
-        android:shadowColor="@color/black"
+        android:textColorHint="?attr/text_color"
+        android:textColor="?attr/text_color"
+        android:shadowColor="?attr/text_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailsignup" />

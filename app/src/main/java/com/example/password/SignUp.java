@@ -2,6 +2,8 @@ package com.example.password;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,6 +27,11 @@ public class SignUp extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (SharedData.darkMode){
+            this.setTheme(R.style.Theme_Dark);
+        }else{
+            this.setTheme(R.style.Theme_Light);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         EditText name = findViewById(R.id.namesignup);
@@ -32,6 +39,7 @@ public class SignUp extends AppCompatActivity {
         EditText password = findViewById(R.id.passwordsignup);
         Button login = findViewById(R.id.loginBtnSignup);
         Button signup = findViewById(R.id.signupBtn);
+
 
 
         signup.setOnClickListener(v -> {
@@ -57,6 +65,7 @@ public class SignUp extends AppCompatActivity {
                                                                 .set(user.toJson());
                                                         SharedData.setUser(user);
                                                         Intent intent = new Intent(getApplicationContext(), HomeScreen.class);
+                                                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                                         startActivity(intent);
                                                     }
                                                 })

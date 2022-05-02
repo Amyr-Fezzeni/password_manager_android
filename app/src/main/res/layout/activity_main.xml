@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EFEFEF"
-    android:theme="@style/Theme.Password"
+    android:background="?attr/background_color"
     tools:context=".Login">
 
     <EditText
@@ -22,6 +21,7 @@
         android:inputType="textEmailAddress"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
+        android:textColor="?attr/text_color"
         android:shadowColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.45"
@@ -55,6 +55,7 @@
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
+        android:textColor="?attr/text_color"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
         android:shadowColor="@color/white"
@@ -83,7 +84,7 @@
         android:fontFamily="sans-serif-light"
         android:shadowColor="@color/white"
         android:text="Password Manager"
-        android:textColor="#DD424242"
+        android:textColor="?attr/text_color"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,6 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="------ or ------"
+        android:textColor="?attr/text_color"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,5 +1,6 @@
 package com.example.password;
 
+import android.app.ActivityOptions;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -12,9 +13,13 @@ import com.example.password.services.DatabaseService;
 import com.example.password.services.Scrypt;
 import com.example.password.services.SharedData;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -26,6 +31,7 @@ import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -44,19 +50,39 @@ public class HomeScreen extends AppCompatActivity {
     ArrayList<Password> allPasswords;
      CustomAdapter adapter;
      ListView l;
+    ActivityResultLauncher<Intent> startActivityForResult = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == AppCompatActivity.RESULT_OK) {
+                    Intent data = result.getData();
+                }
+            }
+    );
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (SharedData.darkMode){
+            setTheme(R.style.Theme_Dark);
+        }else{
+            setTheme(R.style.Theme_Light);
+        }
         super.onCreate(savedInstanceState);
-
+        getWindow().requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS);
         binding = ActivityHomeScreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
                 showDialogAddPassword();
+            }
+        });
+        ImageButton settings = findViewById(R.id.settingsBtn);
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Settings.class);
+                startActivityForResult.launch(intent);
             }
         });
 
@@ -81,9 +107,6 @@ public class HomeScreen extends AppCompatActivity {
                 return false;
             }
         });
-
-
-
     }
 
 
@@ -228,4 +251,21 @@ public class HomeScreen extends AppCompatActivity {
                 });
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable @org.jetbrains.annotations.Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        startActivity(getIntent(),
+                ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+        this.finish();
+
+
+
+    }
 }

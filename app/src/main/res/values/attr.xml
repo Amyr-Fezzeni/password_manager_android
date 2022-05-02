@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="dark_mode">
+        <attr name="background_color" format="color"/>
+        <attr name="text_color" format="color"/>
+        <attr name="hint_color" format="color"/>
+        <attr name="icon_color" format="color"/>
+        <attr name="appBar_color" format="color"/>
+        <attr name="bgCard" format="reference"/>
+
+    </declare-styleable>
+</resources>

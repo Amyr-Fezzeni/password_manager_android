@@ -4,21 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EFEFEF"
+    android:background="?attr/background_color"
+    android:id="@+id/bgHomescreen"
     tools:context=".HomeScreen">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
+        android:background="?attr/appBar_color"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/Theme.Password">
+        android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.Password.PopupOverlay"
+            android:background="?attr/appBar_color"
             app:title=" "
            >
 
@@ -37,7 +37,7 @@
                 android:shadowColor="@color/white"
                 android:text="Password Manager"
                 android:layout_marginStart="20dp"
-                android:textColor="@color/white"
+                android:textColor="?attr/text_color"
                 android:textSize="28sp" />
 
             <Space
@@ -46,11 +46,13 @@
                 android:layout_marginEnd="-50dp" />
 
             <ImageButton
+                android:id="@+id/settingsBtn"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="@android:color/transparent"
-                android:layout_marginEnd="5dp"
                 android:layout_marginTop="0dp"
+                android:layout_marginEnd="5dp"
+
+                android:background="@android:color/transparent"
                 android:src="@drawable/ic_menu" />
 
 
@@ -71,7 +73,6 @@
         android:divider="@null"
         android:paddingHorizontal="10dp"
         android:paddingVertical="10dp"
-        android:background="#EFEFEF"
         android:layout_height="match_parent" >
 
     </ListView>
@@ -84,6 +85,7 @@
         android:layout_margin="@dimen/fab_margin"
         android:backgroundTint="#03A9F4"
         android:elevation="2dp"
+        app:rippleColor="@color/white"
         android:tint="@color/white"
         android:foregroundTint="@color/white"
         app:srcCompat="@drawable/ic_add"
@@ -96,6 +98,9 @@
         android:layout_marginTop="70dp"
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
+        android:textColorHint="?attr/text_color"
+        android:textColor="?attr/text_color"
+        android:shadowColor="?attr/text_color"
         android:background="@drawable/custom_input"
         android:drawableStart="@drawable/ic_search"
         android:drawablePadding="12dp"

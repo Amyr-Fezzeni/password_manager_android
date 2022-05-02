@@ -6,6 +6,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@android:color/transparent"
     tools:context=".CustomAdapter"
+
+    android:elevation="1dp"
     >
 
 
@@ -16,9 +18,8 @@
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/background"
+        android:background="?attr/bgCard"
         android:outlineProvider="background"
-
         android:elevation="4dp"
         android:radius="30dp"
         android:shape="rectangle">
@@ -37,9 +38,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="20dp"
+            android:textColor="?attr/text_color"
             android:layout_marginTop="65dp"
             android:text=""
-            android:textColor="#535353"
             android:textSize="18sp"
             />
 
@@ -50,7 +51,8 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="45dp"
             android:text=""
-            android:textColor="#535353"
+            android:textColor="?attr/text_color"
+            android:textColorHint="?attr/text_color"
             android:textSize="18sp" />
 
         <ImageButton
@@ -80,7 +82,7 @@
             android:layout_height="match_parent"
             android:layout_marginStart="50dp"
             android:layout_marginTop="10dp"
-            android:textColor="#535353"
+            android:textColor="?attr/text_color"
             android:text=""
             android:textSize="24sp"
             />

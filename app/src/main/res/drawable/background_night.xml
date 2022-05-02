@@ -11,8 +11,8 @@
         <shape>
             <gradient
                 android:angle="0"
-                android:startColor="#FFFFFF"
-                android:endColor="#42C2FA"
+                android:startColor="#004868"
+                android:endColor="#007AB5"
                 android:type="linear" />
             <corners android:radius="20dp" />
 
@@ -23,5 +23,4 @@
         </shape>
 
     </item>
-
 </layer-list>
