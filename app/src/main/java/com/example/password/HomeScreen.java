@@ -9,6 +9,7 @@ import android.os.Bundle;
 
 import com.example.password.models.Password;
 import com.example.password.services.DatabaseService;
+import com.example.password.services.Scrypt;
 import com.example.password.services.SharedData;
 
 import androidx.annotation.NonNull;
@@ -22,6 +23,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.AdapterView;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -39,6 +41,7 @@ public class HomeScreen extends AppCompatActivity {
 
     private ActivityHomeScreenBinding binding;
      ArrayList<Password> passwords;
+    ArrayList<Password> allPasswords;
      CustomAdapter adapter;
      ListView l;
 
@@ -51,17 +54,26 @@ public class HomeScreen extends AppCompatActivity {
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 showDialogAddPassword();
             }
         });
+
+        AutoCompleteTextView search =(AutoCompleteTextView) findViewById(R.id.filterTextview);
+        search.addTextChangedListener(new TextWatcher() {
+
+            public void afterTextChanged(Editable s) {
+                filterData(s.toString());
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        });
+
         refreshData();
         l = findViewById(R.id.listPasswords);
-        l.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), "One Click", Toast.LENGTH_SHORT).show();
-            }
-        });
         l.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
@@ -76,7 +88,16 @@ public class HomeScreen extends AppCompatActivity {
 
 
 
-
+    private void filterData(String query){
+        passwords = new ArrayList<>();
+        for (Password p : allPasswords){
+            if (p.getTitle().toLowerCase().contains(query.toLowerCase())){
+                passwords.add(p);
+            }
+        }
+        adapter = new CustomAdapter(HomeScreen.this, passwords);
+        l.setAdapter(adapter);
+    }
 
     private void showDialogAddPassword(){
         final Dialog dialog = new Dialog(this);
@@ -182,6 +203,7 @@ public class HomeScreen extends AppCompatActivity {
 
     void refreshData(){
         passwords = new ArrayList<Password>();
+
         DatabaseService.db.collection("users")
                 .document(SharedData.currentUser.getId())
                 .collection("passwords")
@@ -193,7 +215,11 @@ public class HomeScreen extends AppCompatActivity {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 passwords.add(new Password(document.getData()));
                             }
+                            for(Password p : passwords){
+                                System.out.println(p.toString());
+                            }
                             adapter = new CustomAdapter(HomeScreen.this, passwords);
+                            allPasswords = passwords;
                             l.setAdapter(adapter);
                         } else {
                             System.out.println("Error getting documents."+ task.getException());

@@ -1,5 +1,7 @@
 package com.example.password.models;
 
+import com.example.password.services.Scrypt;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -55,7 +57,7 @@ public class User {
         data.put("id",id);
         data.put("name",name);
         data.put("email",email);
-        data.put("password",password);
+        data.put("password", Scrypt.crypt(password));
         return data;
     }
     public static User fromJson(Map<String, Object> json){

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EFEFEF"
     tools:context=".HomeScreen">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -25,6 +26,7 @@
             android:id="@+id/imageView2"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_marginStart="-20dp"
             app:srcCompat="@drawable/icon" />
 
             <TextView
@@ -34,6 +36,7 @@
                 android:fontFamily="sans-serif-light"
                 android:shadowColor="@color/white"
                 android:text="Password Manager"
+                android:layout_marginStart="20dp"
                 android:textColor="@color/white"
                 android:textSize="28sp" />
 
@@ -63,13 +66,15 @@
     <ListView
         android:id="@+id/listPasswords"
         android:layout_width="match_parent"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="120dp"
         android:textAlignment="center"
         android:divider="@null"
         android:paddingHorizontal="10dp"
         android:paddingVertical="10dp"
         android:background="#EFEFEF"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" >
+
+    </ListView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -83,5 +88,18 @@
         android:foregroundTint="@color/white"
         app:srcCompat="@drawable/ic_add"
         />
+
+    <AutoCompleteTextView
+        android:id="@+id/filterTextview"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_search"
+        android:drawablePadding="12dp"
+        android:paddingHorizontal="10dp"
+        android:hint="Search..." />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

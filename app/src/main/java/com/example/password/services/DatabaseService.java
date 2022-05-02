@@ -23,7 +23,7 @@ public class DatabaseService {
         db.collection("users")
                 .document(SharedData.currentUser.getId())
                 .collection("passwords")
-                .add(pass)
+                .add(pass.toJson())
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
@@ -49,7 +49,7 @@ public class DatabaseService {
                 .document(SharedData.currentUser.getId())
                 .collection("passwords")
                 .document(pass.getId())
-                .set(pass)
+                .set(pass.toJson())
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
@@ -60,7 +60,8 @@ public class DatabaseService {
 
     }
     static public void deletePassword(Password pass){
-
+        System.out.println("=================================================================================");
+        System.out.println(pass.toString());
         db.collection("users")
                 .document(SharedData.currentUser.getId())
                 .collection("passwords")
