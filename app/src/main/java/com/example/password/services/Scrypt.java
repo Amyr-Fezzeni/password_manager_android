@@ -1,5 +1,6 @@
 package com.example.password.services;
 
+// for scrypting important data
 public class Scrypt {
 
     public static String crypt(String data){

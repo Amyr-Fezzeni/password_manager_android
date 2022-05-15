@@ -2,6 +2,8 @@ package com.example.password;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.text.Editable;
@@ -60,6 +62,7 @@ public class CustomAdapter extends ArrayAdapter {
         username.setText(pass.getUsername());
         visibilityBtn.setActivated(true);
         password.setText(getStars(pass.getPassword()));
+
         visibilityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,6 +80,7 @@ public class CustomAdapter extends ArrayAdapter {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "Password copied on clipboard", Toast.LENGTH_SHORT).show();
+                copyPassword(pass.getPassword());
             }
         });
 
@@ -91,7 +95,11 @@ public class CustomAdapter extends ArrayAdapter {
 
 
     }
-
+    void copyPassword(String password){
+        ClipboardManager clipboard = (ClipboardManager) getContext().getSystemService(getContext().CLIPBOARD_SERVICE);
+        ClipData clip = ClipData.newPlainText("password", password);
+        clipboard.setPrimaryClip(clip);
+    }
 
     String getStars(String pass){
         String stars = "";

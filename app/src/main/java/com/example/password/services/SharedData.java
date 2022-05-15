@@ -9,17 +9,8 @@ public class SharedData {
     public static void setUser(User user){
         currentUser = user;
     }
-
-    public static boolean darkMode = true;
-    public static int bgColor = Color.rgb(223,223,223);
-    public static void changeDarkMode(boolean value){
-        darkMode = value;
-        if (darkMode){
-            bgColor = Color.rgb(23,23,23);
-        }else{
-            bgColor = Color.rgb(223,223,223);
-        }
-    }
+    public static boolean darkMode = false;
+    public static void changeDarkMode(boolean value){ darkMode = value; }
 
 
 

@@ -33,8 +33,7 @@ public class Login extends AppCompatActivity {
         }else{
             setTheme(R.style.Theme_Light);
         }
-        System.out.println(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES);
-        System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
@@ -43,8 +42,6 @@ public class Login extends AppCompatActivity {
         EditText password = findViewById(R.id.password);
         Button connectBtn = findViewById(R.id.connectBtn);
         Button signupBtn = findViewById(R.id.createAccountBtn);
-        email.setText("anotique@gmail.com");
-        password.setText("azerty");
         connectBtn.setOnClickListener(v -> {
             if (!email.getText().toString().isEmpty() && !password.getText().toString().isEmpty()){
                 DatabaseService.db.collection("users")
